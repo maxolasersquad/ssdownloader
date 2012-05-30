@@ -1,0 +1,22 @@
+NAME
+    ssdownloader - Short for Simon & Schuster Downloader
+
+SYNOPSIS
+    ssdownloader [jnlp-file] [save-location]
+
+DESCRIPTION
+    A simple tool to download your purchases from Simon & Scheuster, bypassing their Java applet.
+
+    jnlp-file
+        The location of the jnlp file.
+
+    save-location
+        Local directory to save the files.
+
+AUTHOR
+    Jack David Baucum <maxolasersquad@gmail.com>
+    http://maxolasersquad.blogspot.com
+
+COPYRIGHT
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+    This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
