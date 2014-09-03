@@ -1,6 +1,7 @@
-#/usr/bin/env python
+#! /usr/bin/env python3
 
-import sys, urllib2, re
+import sys, re
+from urllib import request
 from xml.dom.minidom import parseString
 
 class Manager:
@@ -15,7 +16,7 @@ class Manager:
 class Order:
     def __init__(self, url):
         self.url = url
-        file = urllib2.urlopen(self.url)
+        file = request.urlopen(self.url)
         data = file.read()
         file.close()
         dom = parseString(data)
@@ -32,7 +33,7 @@ class Order:
         self.parseFile()
 
     def parseFile(self):
-        file = urllib2.urlopen(self.url)
+        file = request.urlopen(self.url)
         data = file.read()
         file.close()
         dom = parseString(data)
@@ -68,7 +69,7 @@ class Download:
         self.filename = filename
 
     def download(self, destination):
-        download = urllib2.urlopen(self.url)
+        download = request.urlopen(self.url)
         output = open(destination + '/' + self.filename, 'wb')
         output.write(download.read())
         output.close()
@@ -102,7 +103,7 @@ def main(argv=None):
     else:
         manager = Manager(argv[1])
         for download in manager.order.downloads:
-            print 'Saving ' + download.filename
+            print('Saving ' + download.filename)
             download.download(argv[2])
 
 if __name__ == "__main__":
